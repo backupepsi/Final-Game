@@ -20,11 +20,11 @@ function preload(){
  gimg = loadImage("gameover.png");
  win = loadImage("you-win.png");
  next = loadImage("nextlevel.png");
- lsound = loadSound("sounds/launch-sound.mp3");
+ /*lsound = loadSound("sounds/launch-sound.mp3");
  wsound = loadSound("sounds/win-sound.wav");
  bsound = loadSound("sounds/bomb-sound.mp3");
  hsound = loadSound("sounds/hit-ball.wav");
- lose = loadSound("sounds/lose.flac")
+ lose = loadSound("sounds/lose.flac")*/
 }
 
 function setup() {
@@ -184,7 +184,7 @@ for(var i=0; i<k; i++){
   if(red[i].isTouching(player)&&red[i].visible === true){
       red[i].visible = false
    score=score+1;
-   hsound.play();
+   //hsound.play();
     }
  }
 
@@ -192,7 +192,7 @@ for(var i=0; i<k; i++){
   if(orange[i].isTouching(player)&&orange[i].visible === true){
       orange[i].visible = false
    score=score+1;
-   hsound.play();
+   //hsound.play();
     }
  }
 
@@ -200,7 +200,7 @@ for(var i=0; i<k; i++){
   if(yellow[i].isTouching(player)&&yellow[i].visible === true){
       yellow[i].visible = false
    score=score+1;
-   hsound.play();
+  // hsound.play();
     }
  }
 
@@ -208,7 +208,7 @@ for(var i=0; i<k; i++){
   if(green[i].isTouching(player)&&green[i].visible === true){
       green[i].visible = false
    score=score+1;
-   hsound.play();
+  // hsound.play();
     }
  }
 
@@ -216,13 +216,13 @@ for(var i=0; i<k; i++){
   if(blue[i].isTouching(player)&&blue[i].visible === true){
       blue[i].visible = false
    score=score+1;
-   hsound.play();
+ //  hsound.play();
     }
  }
 
 if(player.isTouching(bomb)){
   gameState = "end";
-  bsound.play();
+ // bsound.play();
 }
 
 if (score===25&&bomb){
@@ -258,7 +258,7 @@ if (score===25&&bomb){
   player.velocityY = 0;
   winn.visible = true;
   nextlevel.visible = true;
-  wsound.play();
+  //wsound.play();
   if (mousePressedOver(nextlevel)){
     gameState = "begin";
     score = 0;
@@ -374,7 +374,7 @@ if(keyDown("SPACE")){
   player.velocityY = velY;
   gameState = "play";
   //launch sound
-  lsound.play();
+  //lsound.play();
 }
 
 fill(47, 148, 255);
